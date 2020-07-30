@@ -5,7 +5,19 @@ var body = document.getElementById("bodyGradient");
 var afisare = document.getElementById("afisare");
 var randomBtn = document.querySelector(".random");
 
-function setGradient() {
+const randomColors = () => {
+  return (
+    "rgb(" +
+    Math.floor(Math.random() * 256) +
+    "," +
+    Math.floor(Math.random() * 256) +
+    "," +
+    Math.floor(Math.random() * 256) +
+    ")"
+  );
+};
+
+const setGradient = () => {
   body.style.background =
     "linear-gradient(to right, " +
     color1.value +
@@ -16,41 +28,19 @@ function setGradient() {
     ")";
 
   afisare.textContent = body.style.background + ";";
-}
+};
 
-function setRandomGradient() {
-  var rgb1 =
-    "rgb(" +
-    Math.floor(Math.random() * 256) +
-    "," +
-    Math.floor(Math.random() * 256) +
-    "," +
-    Math.floor(Math.random() * 256) +
-    ")";
+const setRandomGradient = () => {
+  var rgb1 = randomColors();
+  var rgb2 = randomColors();
 
-    var rgb2 =
-    "rgb(" +
-    Math.floor(Math.random() * 256) +
-    "," +
-    Math.floor(Math.random() * 256) +
-    "," +
-    Math.floor(Math.random() * 256) +
-    ")";
-
-    var rgb3 =
-    "rgb(" +
-    Math.floor(Math.random() * 256) +
-    "," +
-    Math.floor(Math.random() * 256) +
-    "," +
-    Math.floor(Math.random() * 256) +
-    ")";
-
+  var rgb3 = randomColors();
+  console.log(1);
   body.style.background =
     "linear-gradient(to right, " + rgb1 + ", " + rgb2 + ", " + rgb3 + ")";
 
   afisare.textContent = body.style.background + ";";
-}
+};
 
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
