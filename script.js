@@ -40,6 +40,7 @@ const setRandomGradient = () => {
     "linear-gradient(to right, " + rgb1 + ", " + rgb2 + ", " + rgb3 + ")";
 
   afisare.textContent = body.style.background + ";";
+  (afisare.style.fontFamily = "Amatic SC"), cursive;
 };
 
 color1.addEventListener("input", setGradient);
